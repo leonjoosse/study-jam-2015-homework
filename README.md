@@ -21,4 +21,4 @@ Every lesson has some homework, I decided to publish that here.
 
 ## Final project
 
-I do have an idea about improving (Livecarb for Android)[https://play.google.com/store/apps/details?id=nl.livecarb.android]. 
+I do have an idea about improving [Livecarb for Android](https://play.google.com/store/apps/details?id=nl.livecarb.android). 
