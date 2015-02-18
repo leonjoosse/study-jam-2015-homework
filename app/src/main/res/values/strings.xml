@@ -16,5 +16,6 @@
     <string name="pref_units_default" translatable="false">metric</string>
     <string name="menu_show_location_on_map">Show location on map</string>
     <string name="map_app_not_found">No app found to display your location on a map</string>
+    <string name="share">Share</string>
 
 </resources>
