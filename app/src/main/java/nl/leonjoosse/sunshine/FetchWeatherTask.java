@@ -9,8 +9,8 @@ import java.util.Date;
 
 import nl.leonjoosse.sunshine.connection.OpenWeatherMapApiClient;
 import nl.leonjoosse.sunshine.connection.OpenWeatherMapApiClientFactory;
-import nl.leonjoosse.sunshine.model.DailyForecast;
-import nl.leonjoosse.sunshine.model.Forecast;
+import nl.leonjoosse.sunshine.connection.openweathermapbeans.DailyForecast;
+import nl.leonjoosse.sunshine.connection.openweathermapbeans.Forecast;
 import retrofit.RetrofitError;
 
 /**
@@ -25,14 +25,10 @@ public class FetchWeatherTask extends AsyncTask<Void, Void, String[]> {
 
     private String query;
 
-    public FetchWeatherTask(Context context) {
+    public FetchWeatherTask(Context context, String query) {
         super();
 
-        query = PreferenceManager.getDefaultSharedPreferences(context)
-                .getString(
-                        context.getString(R.string.pref_location_key),
-                        context.getString(R.string.pref_location_default)
-                );
+        this.query = query;
     }
 
     @Override

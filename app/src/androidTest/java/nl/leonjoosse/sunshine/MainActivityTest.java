@@ -8,9 +8,9 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-import nl.leonjoosse.sunshine.model.DailyForecast;
-import nl.leonjoosse.sunshine.model.Temperature;
-import nl.leonjoosse.sunshine.model.Weather;
+import nl.leonjoosse.sunshine.connection.openweathermapbeans.DailyForecast;
+import nl.leonjoosse.sunshine.connection.openweathermapbeans.Temperature;
+import nl.leonjoosse.sunshine.connection.openweathermapbeans.Weather;
 
 /**
  * Tests whether the ForecastFragment is shown and {@link ForecastFragment#updateUI(String[])}.
@@ -60,7 +60,7 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
 
     public void testFormatForecast() {
 
-        FetchWeatherTask task = new FetchWeatherTask(getInstrumentation().getContext());
+        FetchWeatherTask task = new FetchWeatherTask(getInstrumentation().getContext(), "null");
 
         final long dateStamp = new GregorianCalendar(2015, 2, 11).getTimeInMillis();
 

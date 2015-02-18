@@ -1,4 +1,4 @@
-package nl.leonjoosse.sunshine.model;
+package nl.leonjoosse.sunshine.connection.openweathermapbeans;
 
 import java.util.List;
 

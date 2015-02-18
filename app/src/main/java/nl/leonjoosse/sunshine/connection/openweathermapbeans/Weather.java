@@ -1,4 +1,4 @@
-package nl.leonjoosse.sunshine.model;
+package nl.leonjoosse.sunshine.connection.openweathermapbeans;
 
 /**
  * A description of the weather of a {@link DailyForecast}.

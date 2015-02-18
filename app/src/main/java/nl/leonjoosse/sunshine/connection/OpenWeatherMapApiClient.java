@@ -1,6 +1,6 @@
 package nl.leonjoosse.sunshine.connection;
 
-import nl.leonjoosse.sunshine.model.Forecast;
+import nl.leonjoosse.sunshine.connection.openweathermapbeans.Forecast;
 import retrofit.http.GET;
 import retrofit.http.Query;
 
