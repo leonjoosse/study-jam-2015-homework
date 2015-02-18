@@ -14,7 +14,8 @@ import nl.leonjoosse.sunshine.model.Forecast;
 import retrofit.RetrofitError;
 
 /**
- * Created by Leon on 4-2-2015.
+ * AsyncTask that retrieves a weather forecast for the location set by the user in Settings. Every
+ * entry in the returned {@code String[]} represents a day.
  */
 public class FetchWeatherTask extends AsyncTask<Void, Void, String[]> {
 
@@ -67,6 +68,14 @@ public class FetchWeatherTask extends AsyncTask<Void, Void, String[]> {
         return dailyForecasts;
     }
 
+    /**
+     * Formats a day forecast. Format: "date - weather description, - max temp/min temp".
+     * Example: "wo, feb. 18 - licht bewolkt - 7/5"
+     *
+     * @param forecast The {@link DailyForecast}
+     *
+     * @return A daily forecast, formatted.
+     */
     public String formatForecast(DailyForecast forecast) {
 
         if (forecast == null) {
@@ -85,6 +94,9 @@ public class FetchWeatherTask extends AsyncTask<Void, Void, String[]> {
                 + Math.round(tempHigh) + "/" + Math.round(tempLow);
     }
 
+    /**
+     * @return {@code defaultValue} when {@code value} is null, otherwise just {@code value}.
+     */
     private <T> T valueOrDefault(T value, T defaultValue) {
         return value == null ? defaultValue : value;
     }

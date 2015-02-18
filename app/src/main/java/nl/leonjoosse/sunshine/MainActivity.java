@@ -8,7 +8,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-
+/**
+ * Main activity and entry point of this application. Displays a list of forecasts for the coming 7
+ * days. Clicking on a forecast opens a {@link DetailActivity}, where more details of the forecast
+ * are displayed.
+ */
 public class MainActivity extends ActionBarActivity {
 
     @Override

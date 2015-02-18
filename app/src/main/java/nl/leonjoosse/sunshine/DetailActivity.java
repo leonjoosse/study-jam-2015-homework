@@ -35,12 +35,15 @@ public class DetailActivity extends ActionBarActivity {
         }
     }
 
+    /**
+     * @return The weather one liner for today, including ' #SunshineApp'
+     */
     private Intent getShareIntent() {
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("text/plain");
         intent.putExtra(
                 Intent.EXTRA_TEXT,
-                getIntent().getStringExtra(Intent.EXTRA_TEXT) + " #Sunshine"
+                getIntent().getStringExtra(Intent.EXTRA_TEXT) + " #SunshineApp"
         );
         return intent;
     }

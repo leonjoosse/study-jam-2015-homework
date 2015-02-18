@@ -4,7 +4,7 @@ import android.content.Context;
 import android.preference.PreferenceManager;
 
 /**
- * Created by Leon on 18-2-2015.
+ * Some utility methods, specific for this app.
  */
 public class Utils {
 
