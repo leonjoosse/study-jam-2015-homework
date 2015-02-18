@@ -40,6 +40,7 @@ public class DetailActivity extends ActionBarActivity {
      */
     private Intent getShareIntent() {
         Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         intent.setType("text/plain");
         intent.putExtra(
                 Intent.EXTRA_TEXT,
