@@ -35,7 +35,7 @@ public interface OpenWeatherMapApiClient {
     }
 
     @GET("/forecast/daily")
-    public Forecast getWeatherForecast(@Query("id") int cityId,
+    public Forecast getWeatherForecast(@Query("q") String query,
                                        @Query("APPID") String apiKey,
                                        @Query("cnt") int amountOfDays,
                                        @Query("mode") ResponseType responseType,

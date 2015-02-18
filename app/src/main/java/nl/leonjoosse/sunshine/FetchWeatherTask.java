@@ -1,8 +1,8 @@
 package nl.leonjoosse.sunshine;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.os.AsyncTask;
+import android.preference.PreferenceManager;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -22,10 +22,16 @@ public class FetchWeatherTask extends AsyncTask<Void, Void, String[]> {
 
     public static final String API_KEY = "6961c744f50322363458e66314ef5f4f";
 
-    private Resources resources;
+    private String query;
 
     public FetchWeatherTask(Context context) {
-        this.resources = context.getResources();
+        super();
+
+        query = PreferenceManager.getDefaultSharedPreferences(context)
+                .getString(
+                        context.getString(R.string.pref_location_key),
+                        context.getString(R.string.pref_location_default)
+                );
     }
 
     @Override
@@ -36,7 +42,7 @@ public class FetchWeatherTask extends AsyncTask<Void, Void, String[]> {
         Forecast forecast = null;
         try {
             forecast = client.getWeatherForecast(
-                    resources.getInteger(R.integer.owm_city_rotterdam),
+                    query,
                     API_KEY,
                     7,
                     OpenWeatherMapApiClient.ResponseType.JSON,
