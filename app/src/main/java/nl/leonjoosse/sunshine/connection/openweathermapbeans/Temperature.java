@@ -1,4 +1,4 @@
-package nl.leonjoosse.sunshine.model;
+package nl.leonjoosse.sunshine.connection.openweathermapbeans;
 
 /**
  * Represents the temperatures on various parts of a {@link DailyForecast}.

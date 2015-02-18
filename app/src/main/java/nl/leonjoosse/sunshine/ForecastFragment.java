@@ -72,15 +72,17 @@ public class ForecastFragment extends Fragment {
         handler.post(new Runnable() {
             @Override
             public void run() {
-                new FetchWeatherTask(getActivity()) {
+                if (getActivity() != null) {
+                    new FetchWeatherTask(getActivity(), Utils.getLocationSettingOrDefault(getActivity())) {
 
-                    @Override
-                    protected void onPostExecute(String[] strings) {
-                        super.onPostExecute(strings);
+                        @Override
+                        protected void onPostExecute(String[] strings) {
+                            super.onPostExecute(strings);
 
-                        updateUI(strings);
-                    }
-                }.execute();
+                            updateUI(strings);
+                        }
+                    }.execute();
+                }
             }
         });
     }
